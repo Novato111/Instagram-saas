@@ -9,7 +9,7 @@ import {
   updateAutomationName,
 } from "@/actions/automations";
 import { useMutationData } from "./use-mutation-data";
-import { useRouter } from "next/navigation";
+
 import { useEffect, useRef, useState } from "react";
 import useZodForm from "./use-zod-form";
 import { AppDispatch, useAppSelector } from "@/redux/store";
@@ -57,7 +57,7 @@ export const useEditAutomation = (automationId: string) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [mutate]);
 
   return {
     edit,
@@ -83,10 +83,7 @@ export const useListener = (id: string) => {
     "automation-info"
   );
 
-  const { errors, onFormSubmit, register, reset, watch } = useZodForm(
-    promptSchema,
-    mutate
-  );
+  const { onFormSubmit, register } = useZodForm(promptSchema, mutate);
 
   const onSetListener = (type: "SMARTAI" | "MESSAGE") => setListener(type);
   return { onSetListener, register, onFormSubmit, listener, isPending };

@@ -1,6 +1,6 @@
 "use client";
 import { InstagramBlue } from "@/icons/instagram-blue";
-import { InstagramDuoToneBlue } from "@/icons/instagram-duotone-blue";
+
 import { PlaneBlue } from "@/icons/plane-blue";
 import React from "react";
 type Props = {

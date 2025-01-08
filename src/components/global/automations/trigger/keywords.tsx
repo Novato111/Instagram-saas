@@ -3,7 +3,7 @@ import { useKeywords } from "@/hooks/use-automation";
 
 import { useMutationDataState } from "@/hooks/use-mutation-data";
 import { useQueryAutomation } from "@/hooks/user-queries";
-import { X } from "lucide-react";
+
 import React from "react";
 
 type Props = {
@@ -11,8 +11,7 @@ type Props = {
 };
 
 export const Keywords = ({ id }: Props) => {
-  const { onValueChange, keyword, onKeyPress, deleteMutation } =
-    useKeywords(id);
+  const { onValueChange, keyword, onKeyPress } = useKeywords(id);
   const { latestVariable } = useMutationDataState(["add-keyword"]);
   const { data } = useQueryAutomation(id);
 
@@ -24,7 +23,7 @@ export const Keywords = ({ id }: Props) => {
       <div className="flex flex-wrap justify-start gap-2 items-center">
         {data?.data?.keywords &&
           data?.data?.keywords.length > 0 &&
-          data?.data?.keywords.map((word) => (
+          data?.data?.keywords.map((word: any) => (
             <div
               className="bg-background-90 flex items-center gap-x-2 capitalize text-text-secondary py-1 px-4 rounded-full"
               key={word.id}

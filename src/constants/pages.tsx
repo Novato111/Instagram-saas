@@ -12,10 +12,7 @@ export const PAGE_BREAD_CRUMBS = [
   "settings",
 ];
 
-type Props = {
-  [page in string]: React.ReactNode;
-};
-export const PAGE_ICONS: Props = {
+export const PAGE_ICONS = {
   AUTOMATIONS: <AutomationDuoToneBlue></AutomationDuoToneBlue>,
   CONTACTS: <ContactsDuoToneBlue></ContactsDuoToneBlue>,
   SETTINGS: <SettingsDuoToneWhite></SettingsDuoToneWhite>,

@@ -9,9 +9,7 @@ import { useQueryAutomations } from "@/hooks/user-queries";
 import CreateAutomation from "../create-automation";
 import { useMutationDataState } from "@/hooks/use-mutation-data";
 
-type Props = {};
-
-const AutomationList = (props: Props) => {
+const AutomationList = () => {
   const { data } = useQueryAutomations();
 
   const { latestVariable } = useMutationDataState(["create-automation"]);
@@ -37,7 +35,7 @@ const AutomationList = (props: Props) => {
 
   return (
     <div className="flex flex-col gap-y-3">
-      {optimisticUiData.data!.map((automation) => (
+      {optimisticUiData.data!.map((automation: any) => (
         <Link
           href={`${pathname}/${automation.id}`}
           key={automation.id}

@@ -1,4 +1,3 @@
-import page from "@/app/(protected)/dashboard/page";
 import { PAGE_ICONS } from "@/constants/pages";
 import React from "react";
 type Props = {
@@ -25,7 +24,8 @@ const MainBreadCrumb = ({ page, slug }: Props) => {
       pr-16
       gap-x-2 items-center"
       >
-        {PAGE_ICONS[page.toUpperCase()]}
+        {PAGE_ICONS[page.toUpperCase() as keyof typeof PAGE_ICONS]}
+
         <h2 className="font-semibold text-3xl capitalize">{page}</h2>
       </span>
     </div>
