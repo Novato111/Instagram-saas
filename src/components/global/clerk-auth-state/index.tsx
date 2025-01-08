@@ -10,13 +10,13 @@ import {
 
 import Loader from "../loader";
 import { Button } from "@/components/ui/button";
-import { User, UserIcon } from "lucide-react";
+import { User } from "lucide-react";
 
 const ClerkAuthState = () => {
   return (
     <>
       <ClerkLoading>
-        <Loader state></Loader>
+        <Loader state>a</Loader>
       </ClerkLoading>
       <SignedOut>
         <SignInButton>
